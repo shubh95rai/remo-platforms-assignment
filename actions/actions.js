@@ -1,11 +1,11 @@
 "use server";
 
 import cloudinary from "@/config/cloudinary.js";
-import db from "@/config/db.js";
-import { writeFile } from "fs/promises";
-import path from "path";
+import { getDB } from "@/config/db.js";
 
 export async function addSchoolAction(formData) {
+  const db = await getDB();
+
   const name = formData.get("name");
   const address = formData.get("address");
   const city = formData.get("city");
@@ -49,6 +49,8 @@ export async function addSchoolAction(formData) {
 }
 
 export async function getSchoolsAction() {
+  const db = await getDB();
+
   const [rows] = await db.execute(
     "SELECT id, name, address, city, image FROM schools"
   );
