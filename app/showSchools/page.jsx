@@ -1,5 +1,7 @@
 import { getSchoolsAction } from "@/actions/actions.js";
 
+export const dynamic = "force-dynamic";
+
 export default async function ShowSchools() {
   const schools = await getSchoolsAction();
 
