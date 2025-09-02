@@ -43,7 +43,7 @@ export async function addSchoolAction(formData) {
   }
 
   await db.execute(
-    "INSERT INTO schools (name, address, city, state, contact, image, email_id) VALUES (?, ?, ?, ?, ?, ?, ?)",
+    "INSERT INTO schools1 (name, address, city, state, contact, image, email_id) VALUES (?, ?, ?, ?, ?, ?, ?)",
     [name, address, city, state, contact, imageUrl, email_id]
   );
 }
@@ -52,7 +52,7 @@ export async function getSchoolsAction() {
   const db = await getDB();
 
   const [rows] = await db.execute(
-    "SELECT id, name, address, city, image FROM schools"
+    "SELECT id, name, address, city, image FROM schools1"
   );
   return rows;
 }
