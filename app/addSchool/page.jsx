@@ -33,7 +33,11 @@ export default function AddSchool() {
     <div className="max-w-lg mx-auto p-6">
       <h1 className="text-2xl font-bold mb-4 text-center">Add School</h1>
 
-      {success && <p className="text-green-600 text-center mb-4">School added successfully!</p>}
+      {success && (
+        <p className="text-green-600 text-center mb-4">
+          School added successfully!
+        </p>
+      )}
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         <div>
